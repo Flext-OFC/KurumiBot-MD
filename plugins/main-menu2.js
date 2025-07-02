@@ -14,10 +14,10 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
   try {
     // Inicializamos el banner y el nombre por sesión si no existen
     if (!global.bannerUrls[conn.user.jid]) {
-      global.bannerUrls[conn.user.jid] = 'https://files.catbox.moe/5k9zhl.jpg'; // URL inicial de la imagen del menú
+      global.bannerUrls[conn.user.jid] = 'https://files.catbox.moe/xvex1f.jpg'; // URL inicial de la imagen del menú
     }
     if (!global.botNames[conn.user.jid]) {
-      global.botNames[conn.user.jid] = 'Bot'; // Nombre inicial del bot
+      global.botNames[conn.user.jid] = '✨𝐊𝐮𝐫𝐮𝐦𝐢 - 𝐁𝐨𝐭 - 𝐌𝐃💖'; // Nombre inicial del bot
     }
 
     // Verificar si el usuario es el socket activo
@@ -50,15 +50,15 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
     // Comandos para el menú y "CARGANDO COMANDOS" (pueden ser usados por cualquier usuario)
     if (command === 'menu' || command === 'help' || command === 'menú') {
       // Variables para el contexto del canal
-      const dev = 'Félix Manuel';
+      const dev = 'Flext Enzo';
       const redes = 'https://github.com/Andresv27728/2.0';
-      const channelRD = { id: "120363400360651198@newsletter", name: "MAKIMA - FRASES" };
+      const channelRD = { id: "120363398249175961@newsletter", name: "💖𝐊𝐮𝐫𝐮𝐦𝐢 𝐁𝐨𝐭 𝐌𝐃 𝐂𝐡𝐚𝐧𝐧𝐞𝐥🌸" };
       let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
-      let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.catbox.moe/mqtxvp.jpg');
+      let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.catbox.moe/t1mq2n.jpg');
 
       // Mensaje de "CARGANDO COMANDOS..." con contexto de canal y respondiendo al mensaje
       await conn.sendMessage(m.chat, {
-        text: 'ꪹ͜🕑͡ 𝗖𝗔𝗥𝗚𝗔𝗡𝗗𝗢 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦...𓏲✧੭',
+        text: '⫷ 𝐄𝐧𝐯𝐢𝐚𝐧𝐝𝐨 𝐥𝐢𝐬𝐭𝐚 𝐝𝐞 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬.... ⫸',
         contextInfo: {
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
@@ -101,267 +101,267 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
       let botname = global.botNames[conn.user.jid]; // Nombre del bot específico para esta sesión
       let menu = `¡Hola! ${taguser} soy ${botname} ${(conn.user.jid == global.conn.user.jid ? '(OficialBot)' : '(Sub-Bot)')} 
 
-╭━━I N F O-B O-T━━
-┃Creador: 𓆩‌۫᷼ ִֶָღܾ݉͢ғ꯭ᴇ꯭፝ℓɪ꯭ͨא𓆪
+╭━━ɪ ɴ ғ ᴏ ʙ ᴏ ᴛ━━
+┃Creador: 𝑭𝑳𝑬𝑿𝑻-𝑶𝑭𝑪
 ┃Tiempo activo: ${uptime}
 ┃Baileys: Multi device.
 ┃Base: Oficial.
 ┃Registros: ${totalreg}
-╰━━━━━━━━━━━━━
+╰♡*:.｡.━━━━━━.｡.:*♡
 
-╭━━INFO USUARIO━╮
+╭━━𝗜𝗡𝗙𝗢 𝗨𝗦𝗨𝗔𝗥𝗜𝗢━╮
 ┃Nombre: ${nombre}
 ┃Rango: ${role}
 ┃Nivel: ${level}
-╰━━━━━━━━━━━━━
+╰♡*:.｡.━━━━━━.｡.:*♡
 
-➪ 𝗟𝗜𝗦𝗧𝗔 
-       ➪  𝗗𝗘 
-           ➪ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦
+➪ 𝑳𝑰𝑺𝑻 
+       ➪  𝑫𝑬 
+           ➪ 𝑪𝑶𝑴𝑴𝑨𝑵𝑫𝑺
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮PRINCIPALES
-┃┈➤ #estado
-┃┈➤ #botreglas
-┃┈➤ #menu
-┃┈➤ #menu2
-┃┈➤ #uptime
-┃┈➤ #menulista
-╰━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚙𝚛𝚒𝚗𝚌𝚒𝚙𝚊𝚕𝚎𝚜
+┃┈❥ #estado
+┃┈❥ #botreglas
+┃┈❥ #menu
+┃┈❥ #menu2
+┃┈❥ #uptime
+┃┈❥ #menulista
+╰♡*:.｡.━━━━━━.｡.:*♡
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮NUEVOS
-┃┈➤ #artista [nombre]
-┃┈➤ #dalle2
-┃┈➤ #repeat
-┃┈➤ #repite
-┃┈➤ #copiame
-┃┈➤ #soccer
-┃┈➤ #rcjugador
-┃┈➤ #rgjugador
-┃┈➤ #vtjugador
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚗𝚞𝚎𝚟𝚘𝚜
+┃┈❥ #artista [nombre]
+┃┈❥ #dalle2
+┃┈❥ #repeat
+┃┈❥ #repite
+┃┈❥ #copiame
+┃┈❥ #soccer
+┃┈❥ #rcjugador
+┃┈❥ #rgjugador
+┃┈❥ #vtjugador
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮PERSONALIZACIÓN
-┃┈➤ #set
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚙𝚎𝚛𝚜𝚘𝚗𝚊𝚕𝚒𝚣𝚊𝚌𝚒𝚘𝚗
+┃┈❥ #set
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮SUBBOTS
-┃┈➤ #setname
-┃┈➤ #setbanner
-┃┈➤ #code
-┃┈➤ #qr
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚂𝚄𝙱𝙱𝙾𝚃𝚂
+┃┈❥ #setname
+┃┈❥ #setbanner
+┃┈❥ #code 
+┃┈❥ #qr
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮BUSCADORES
-┃┈➤ #gitthubsearch
-┃┈➤ #google [Búsqueda]
-┃┈➤ #tiktoksearch
-┃┈➤ #pinterest
-┃┈➤ #imagen [querry]
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙱𝚄𝚂𝙲𝙰𝙳𝙾𝚁𝙴𝚂
+┃┈❥ #gitthubsearch
+┃┈❥ #google [Búsqueda]
+┃┈❥ #tiktoksearch
+┃┈❥ #pinterest
+┃┈❥ #imagen [querry]
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮JUEGOS
-┃┈➤ #abrazar
-┃┈➤ #acertijo
-┃┈➤ #agarrar
-┃┈➤ #ahorcado
-┃┈➤ #besar
-┃┈➤ #acariciar
-┃┈➤ #golpear
-┃┈➤ #pregunta
-┃┈➤ #reto
-┃┈➤ #triste
-┃┈➤ #reto
-┃┈➤ #bot
-┃┈➤ #love
-┃┈➤ #consejo
-┃┈➤ #dance
-┃┈➤ #nombreninja
-┃┈➤ #meme
-┃┈➤ #dormir 
-┃┈➤ #rata
-┃┈➤ #enamorada
-┃┈➤ #gay
-┃┈➤ #manco
-┃┈➤ #apostar
-┃┈➤ #piropo
-┃┈➤ #sonrojarse
-┃┈➤ #agarrar
-╰━━━━━━━━━━━━━━━━━━
-
-
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮WAIFU
-┃┈➤ #robarpersonaje
-┃┈➤ #obtenidos
-┃┈➤ #sacar
-┃┈➤ #guardar
-┃┈➤ #carrw
-┃┈➤ #confirmar
-┃┈➤ #character
-┃┈➤ #roll
-┃┈➤ #top
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙹𝚄𝙴𝙶𝙾𝚂
+┃┈❥ #abrazar
+┃┈❥ #acertijo
+┃┈❥ #agarrar
+┃┈❥ #ahorcado
+┃┈❥ #besar
+┃┈❥ #acariciar
+┃┈❥ #golpear
+┃┈❥ #pregunta
+┃┈❥ #reto
+┃┈❥ #triste
+┃┈❥ #reto
+┃┈❥ #bot
+┃┈❥ #love
+┃┈❥ #consejo
+┃┈❥ #dance
+┃┈❥ #nombreninja
+┃┈❥ #meme
+┃┈❥ #dormir 
+┃┈❥ #rata
+┃┈❥ #enamorada
+┃┈❥ #gay
+┃┈❥ #manco
+┃┈❥ #apostar
+┃┈❥ #piropo
+┃┈❥ #sonrojarse
+┃┈❥ #agarrar
+╰──────────────
 
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮REGISTROS
-┃┈➤ #reg
-┃┈➤ #unreg
-┃┈➤ #profile
-┃┈➤ #usuarios
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚆𝙰𝙸𝙵𝚄
+┃┈❥ #robarpersonaje
+┃┈❥ #obtenidos
+┃┈❥ #sacar
+┃┈❥ #guardar
+┃┈❥ #carrw
+┃┈❥ #confirmar
+┃┈❥ #character
+┃┈❥ #roll
+┃┈❥ #top
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮ECONOMIA
-┃┈➤ #daily
-┃┈➤ #bank
-┃┈➤ #robar
-┃┈➤ #robarxp
-┃┈➤ #rob2
-┃┈➤ #levelup
-┃┈➤ #lb
-┃┈➤ #mine
-┃┈➤ #retirar
-┃┈➤ #trabajar
-┃┈➤ #transferir
-╰━━━━━━━━━━━━━━━━━━
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮DESCARGAS
-┃┈➤ #fb
-┃┈➤ #play
-┃┈➤ #playvid
-┃┈➤ #mediafire
-┃┈➤ #apkmod
-┃┈➤ #ytmp3doc
-┃┈➤ #ytmp4doc
-┃┈➤ #ig
-┃┈➤ #gitclone
-┃┈➤ #tiktok
-┃┈➤ #spotify
-┃┈➤ #tw
-┃┈➤ #ytmp4 
-┃┈➤ #imagen [querry]
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚁𝙴𝙶𝙸𝚂𝚃𝚁𝙾𝚂
+┃┈❥ #reg
+┃┈❥ #unreg
+┃┈❥ #profile
+┃┈❥ #usuarios
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮GRUPOS
-┃┈➤ #group abrir 
-┃┈➤ #group cerrar 
-┃┈➤ #delete
-┃┈➤ #setppgroup
-┃┈➤ #encuesta
-┃┈➤ #rentar
-┃┈➤ #kick
-┃┈➤ #promote
-┃┈➤ #demote
-┃┈➤ #tagall 
-┃┈➤ #tag
-┃┈➤ #invite 
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙴𝙲𝙾𝙽𝙾𝙼𝙸𝙰
+┃┈❥ #daily
+┃┈❥ #bank
+┃┈❥ #robar
+┃┈❥ #robarxp
+┃┈❥ #rob2
+┃┈❥ #levelup
+┃┈❥ #lb
+┃┈❥ #mine
+┃┈❥ #retirar
+┃┈❥ #trabajar
+┃┈❥ #transferir
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮STICKERS
-┃┈➤ #wm [autor]
-┃┈➤ #s
-┃┈➤ #qc
-┃┈➤ #toimg
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙳𝙴𝚂𝙲𝙰𝚁𝙶𝙰𝚂
+┃┈❥ #fb
+┃┈❥ #play
+┃┈❥ #playvid
+┃┈❥ #mediafire
+┃┈❥ #apkmod
+┃┈❥ #ytmp3doc
+┃┈❥ #ytmp4doc
+┃┈❥ #ig
+┃┈❥ #gitclone
+┃┈❥ #tiktok
+┃┈❥ #spotify
+┃┈❥ #tw
+┃┈❥ #ytmp4 
+┃┈❥ #imagen [querry]
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮DATABASE
-┃┈➤ #delvn
-┃┈➤ #demsg
-┃┈➤ #delimg
-┃┈➤ #delsticker
-┃┈➤ #infobot
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙶𝚁𝚄𝙿𝙾𝚂
+┃┈❥ #group abrir 
+┃┈❥ #group cerrar 
+┃┈❥ #delete
+┃┈❥ #setppgroup
+┃┈❥ #encuesta
+┃┈❥ #rentar
+┃┈❥ #kick
+┃┈❥ #promote
+┃┈❥ #demote
+┃┈❥ #tagall 
+┃┈❥ #tag
+┃┈❥ #invite 
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮EXPERIENCIA
-┃┈➤ #buy
-┃┈➤ #buyall
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝚂𝚃𝙸𝙲𝙺𝙴𝚁𝚂
+┃┈❥ #wm [autor]
+┃┈❥ #s
+┃┈❥ #qc
+┃┈❥ #toimg
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮CONFIGURACIÓN
-┃┈➤ #enable
-┃┈➤ #disable
-┃┈➤ #on
-┃┈➤ #off
-╰━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴
+┃┈❥ #delvn
+┃┈❥ #demsg
+┃┈❥ #delimg
+┃┈❥ #delsticker
+┃┈❥ #infobot
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮ANIME
-┃┈➤ #toanime
-┃┈➤ #tts
-┃┈➤ #remini
-┃┈➤ #enhance
-┃┈➤ #hd
-┃┈➤ #nuevafotochannel
-┃┈➤ #nosilenciarcanal
-┃┈➤ #silenciarcanal
-┃┈➤ #seguircanal
-┃┈➤ #inspect
-┃┈➤ #infobot
-┃┈➤ #readvo
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙴𝚇𝙿𝙴𝚁𝙸𝙴𝙽𝙲𝙸𝙰
+┃┈❥ #buy
+┃┈❥ #buyall
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮INFORMACIÓN
-┃┈➤ #creador
-┃┈➤ #owner
-┃┈➤ #reportar
-┃┈➤ #ping
-┃┈➤ #links
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙲𝙾𝙽𝙵𝙸𝙶𝚄𝚁𝙰𝙲𝙸𝚘𝙽
+┃┈❥ #enable
+┃┈❥ #disable
+┃┈❥ #on
+┃┈❥ #off
+╰♡*:.｡.━━━━━━.｡.:*♡
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮CREADOR
-┃┈➤ #addprem
-┃┈➤ #copia
-┃┈➤ #broadcastgroup
-┃┈➤ #bcgb
-┃┈➤ #bcgb2
-┃┈➤ #broadcast
-┃┈➤ #bc
-┃┈➤ #cheat
-┃┈➤ #delprem
-┃┈➤ #dsowner
-┃┈➤ #fixmsgespera
-┃┈➤ #get
-┃┈➤ #prefix
-┃┈➤ #reiniciar 
-┃┈➤ #saveplugin 
-┃┈➤ #update
-┃┈➤ #resetpersonajes
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙰𝙽𝙸𝙼𝙴
+┃┈❥ #toanime
+┃┈❥ #tts
+┃┈❥ #remini
+┃┈❥ #enhance
+┃┈❥ #hd
+┃┈❥ #nuevafotochannel
+┃┈❥ #nosilenciarcanal
+┃┈❥ #silenciarcanal
+┃┈❥ #seguircanal
+┃┈❥ #inspect
+┃┈❥ #infobot
+┃┈❥ #readvo
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮DESARROLLADORES
-┃┈➤ #autoadmin
-┃┈➤ #banuser
-┃┈➤ #unbanuser
-┃┈➤ #banchat
-┃┈➤ #unbanchat
-┃┈➤ #ip
-┃┈➤ #join
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝙲𝙸𝚘𝙽
+┃┈❥ #creador
+┃┈❥ #owner
+┃┈❥ #reportar
+┃┈❥ #ping
+┃┈❥ #links
+╰──────────────
 
-.       ╭ֹ┈ ⵿❀⵿ ┈╮ ㅤ
- ╭ֹ┈ ⵿❀⵿ ┈╮A - I
-┃┈➤ #dalle
-┃┈➤ #simi
-┃┈➤ #ai
-┃┈➤ #tovideo
-┃┈➤ #togifaud
-╰━━━━━━━━━━━━━━━━━━
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙲𝚁𝙴𝙰𝙳𝙾𝚁
+┃┈❥ #addprem
+┃┈❥ #copia
+┃┈❥ #broadcastgroup
+┃┈❥ #bcgb
+┃┈❥ #bcgb2
+┃┈❥ #broadcast
+┃┈❥ #bc
+┃┈❥ #cheat
+┃┈❥ #delprem
+┃┈❥ #dsowner
+┃┈❥ #fixmsgespera
+┃┈❥ #get
+┃┈❥ #prefix
+┃┈❥ #reiniciar 
+┃┈❥ #saveplugin 
+┃┈❥ #update
+┃┈❥ #resetpersonajes
+╰──────────────
+
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙳𝙴𝚂𝙰𝚁𝚁𝙾𝙻𝙻𝙰𝙳𝙾𝚁𝙴𝚂
+┃┈❥ #autoadmin
+┃┈❥ #banuser
+┃┈❥ #unbanuser
+┃┈❥ #banchat
+┃┈❥ #unbanchat
+┃┈❥ #ip
+┃┈❥ #join
+╰──────────────
+
+.       •| ⊱✿⊰ |• ㅤ
+ •| ⊱✿⊰ |•𝙰 - 𝙸
+┃┈❥ #dalle
+┃┈❥ #simi
+┃┈❥ #ai
+┃┈❥ #tovideo
+┃┈❥ #togifaud
+╰──────────────
 
 
 > © ⍴᥆ᥕᥱrᥱძ ᑲᥡ Félix Manuel`.trim(); // El resto del menú permanece igual
@@ -380,7 +380,7 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
           },
           forwardingScore: 999,
           externalAdReply: {
-            title: '𝐌A͜͡𝑲𝑖𝐌ꪖ  𝐁o͟T͎ 𝙼𝙳',
+            title: '💖𝐊𝐔𝐑𝐔𝐌𝐈-𝐁𝐎𝐓-𝐌𝐃🌹',
             body: dev,
             thumbnailUrl: perfil,
             sourceUrl: redes,
@@ -399,9 +399,9 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
   }
 };
 
-handler.help = ['menu', 'setbsianner', 'setsiname'];
+handler.help = ['menu', 'setbanner', 'setname'];
 handler.tags = ['main'];
-handler.command = ['menu2', 'help2', 'menú2', 'asistenciabot', 'comandosbot', 'listadecomandos', 'menucompleto', 'sesitbanner', 'setsiname'];
+handler.command = ['menu', 'help', 'menú', 'asistenciabot', 'comandosbot', 'listadecomandos', 'menucompleto', 'setbanner', 'setname'];
 handler.register = true;
 
 function clockString(ms) {
