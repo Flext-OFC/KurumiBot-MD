@@ -33,16 +33,16 @@ const handler = async (msg, { conn, args }) => {
 
   if (!isAdmin && !isBot) {
     return await conn.sendMessage(chatId, {
-      text: "「🩵」Este comando solo puede ser usado por admins o el bot.."
+      text: "「📌」ᴇsᴛᴇ ᴄᴏᴍᴀɴᴅᴏ sᴏʟᴏ ᴘᴜᴇᴅᴇ sᴇʀ ᴜsᴀᴅᴏ ᴘᴏʀ ᴀᴅᴍɪɴs ᴏ ᴇʟ ʙᴏᴛ..."
     }, { quoted: msg });
   }
 
   const mentionList = participants.map(p => `➥ @${p.id.split("@")[0]}`).join("\n");
   const extraMsg = args.join(" ");
-  let finalMsg = "━〔 *MENSION GRUPAL* 〕➪\n";
-  finalMsg += "MAKIMA 2.0 BOT\n";
+  let finalMsg = "━〔 *𝐓𝐀𝐆𝐀𝐋𝐋* 〕➪\n";
+  finalMsg += "KURUMI - BOT\n";
   if (extraMsg.trim().length > 0) {
-    finalMsg += `\n💎 Mensaje: ${extraMsg}\n\n`;
+    finalMsg += `\n💥 ᴍᴇɴsᴀᴊᴇ: ${extraMsg}\n\n`;
   } else {
     finalMsg += "\n";
   }
