@@ -1,67 +1,35 @@
-import yts from 'yt-search';
+import yts from 'yt-search'
+let handler = async (m, { conn, command, text, usedPrefix }) => {
+if (!text) throw `❮🚀❯ » 𝙄𝙣𝙜𝙧𝙚𝙨𝙚 𝙪𝙣 𝙩𝙚𝙭𝙩𝙤 𝙥𝙖𝙧𝙖 𝙪𝙨𝙖𝙧 𝙚𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤.\n\n• 𝙋𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙡𝙤:\n*${usedPrefix + command} Erika Lundmeon - Yad*`
+let res = await yts(text)
+let vid = res.videos[0]
+if (!vid) throw `❮❌❯ » 𝙀𝙣𝙡𝙖𝙘𝙚 𝙣𝙤 𝙫𝙖𝙡𝙞𝙙𝙤, 𝙞𝙣𝙜𝙧𝙚𝙨𝙚 𝙚𝙡 𝙣𝙤𝙢𝙗𝙧𝙚 𝙙𝙚 𝙡𝙖 𝙘𝙖𝙣𝙘𝙞𝙤𝙣.`
+let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
+//m.react('✅') 
+let buscador = `•═══• ❮ 🎬 • \`Play YT\` • 🎧 ❯ •═══•
 
-const handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) {
-    throw `💎 Ingresa un nombre o texto para buscar en YouTube.\n\n📌 *Ejemplo:* ${usedPrefix + command} Haikyuu AMV`;
-  }
+*TITULO:*
+• ${vid.title}
 
-  try {
-    await m.react('🕒'); // Reacción de búsqueda
+*DURACION:*
+• ${vid.timestamp}
 
-    const search = await yts(text);
-    const videoInfo = search.all?.[0];
+*VISTAS:*
+• ${vid.views}
 
-    if (!videoInfo) {
-      throw '❌ No se encontraron resultados. Intenta con otro título.';
-    }
+*PUBLICADO EN:*
+• ${vid.ago}
 
-    const body = `*┏━━━━━━━━━━━━━━━━━⬣*
-*┃ 💎 MAKIMA - PLAY 💎*
-*┗━━━━━━━━━━━━━━━━━⬣*
-
-🩵 *TÍTULO:* 
-» ${videoInfo.title}
-
-🩵 *CANAL:* 
-» ${videoInfo.author.name}
-
-🩵 *DURACIÓN:* 
-» ${videoInfo.timestamp}
-
-🩵 *PUBLICADO:* 
-» ${videoInfo.ago}
-
-🩵 *VISTAS:* 
-» ${videoInfo.views.toLocaleString()} 
-
-> 💎 *Selecciona una opción para descargar:*`;
-
-    await conn.sendMessage(
-      m.chat,
-      {
-        image: { url: videoInfo.thumbnail },
-        caption: body,
-        footer: '🩷 ᴍᴀᴋɪᴍᴀ ʙᴏᴛ ✨| ᴘʟᴀʏ',
-        buttons: [
-          { buttonId: `.ytmp3 ${videoInfo.url}`, buttonText: { displayText: 'ᴀᴜᴅɪᴏ' } },
-          { buttonId: `.play2 ${videoInfo.url}`, buttonText: { displayText: 'ᴠɪᴅᴇᴏ' } },
-        ],
-        viewOnce: true,
-        headerType: 4,
-      },
-      { quoted: m }
-    );
-
-    await m.react('✅'); // Reacción de éxito
-  } catch (e) {
-    await m.reply(`❌ *Error:* ${e.message}`);
-    await m.react('✖️');
-  }
-};
-
-handler.command = ['play', 'playvid'];
-handler.tags = ['downloader'];
-handler.group = true;
-handler.limit = 6;
-
-export default handler;
+*ENLACE:*
+• ${vid.url}`
+ await conn.sendButton(m.chat, buscador, 'Seleccione el boton para descargar.', thumbnail, [
+['🎬 𝗩𝗜𝗗𝗘𝗢 🎬', `${usedPrefix}video2 ${url}`],
+['🎧 𝗔𝗨𝗗𝗜𝗢 🎧', `${usedPrefix}audio2 ${url}`]
+], null, null, m)}
+handler.help = ['play']
+handler.tags = ['dl']
+handler.command = ['play', 'play2']
+handler.register = true
+handler.disabled = false
+export default handler
+   
