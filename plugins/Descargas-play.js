@@ -2,74 +2,16 @@ import fetch from "node-fetch";
 import yts from 'yt-search';
 import axios from "axios";
 
-const formatAudio = ['mp3', 'm4a', 'webm', 'acc', 'flac', 'opus', 'ogg', 'wav'];
-const formatVideo = ['360', '480', '720', '1080', '1440', '4k'];
-
-const ddownr = {
-  download: async (url, format) => {
-    if (!formatAudio.includes(format) && !formatVideo.includes(format)) {
-      throw new Error('Formato no soportado, verifica la lista de formatos disponibles.');
-    }
-
-    const config = {
-      method: 'GET',
-      url: `https://p.oceansaver.in/ajax/download.php?format=${format}&url=${encodeURIComponent(url)}&api=dfcb6d76f2f6a9894gjkege8a4ab232222`,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36'
-      }
-    };
-
-    try {
-      const response = await axios.request(config);
-
-      if (response.data && response.data.success) {
-        const { id, title, info } = response.data;
-        const { image } = info;
-        const downloadUrl = await ddownr.cekProgress(id);
-
-        return {
-          id: id,
-          image: image,
-          title: title,
-          downloadUrl: downloadUrl
-        };
-      } else {
-        throw new Error('Fallo al obtener los detalles del video.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      throw error;
-    }
-  },
-  cekProgress: async (id) => {
-    const config = {
-      method: 'GET',
-      url: `https://p.oceansaver.in/ajax/progress.php?id=${id}`,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, como Gecko) Chrome/91.0.4472.124 Safari/537.36'
-      }
-    };
-
-    try {
-      while (true) {
-        const response = await axios.request(config);
-
-        if (response.data && response.data.success && response.data.progress === 1000) {
-          return response.data.download_url;
-        }
-        await new Promise(resolve => setTimeout(resolve, 5000));
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      throw error;
-    }
-  }
-};
-
 const handler = async (m, { conn, text, usedPrefix, command }) => {
+  let user = global.db.data.users[m.sender];
+
+  if (user.chocolates < 2) {
+    return conn.reply(m.chat, `🩵 Necesitas 2 Diamantes para poder usar este comando.`, m);
+  }
+
   try {
     if (!text.trim()) {
-      return conn.reply(m.chat, `💣 Ingresa el nombre de la música a descargar.`, m);
+      return conn.reply(m.chat, `🩵 Ingresa el nombre de la música que deseas descargar.`, m);
     }
 
     const search = await yts(text);
@@ -78,15 +20,37 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     const videoInfo = search.all[0];
-    const { title, thumbnail, timestamp, views, ago, url } = videoInfo;
+    if (!videoInfo) {
+      return m.reply('No se pudo obtener información del video.');
+    }
+
+    const { title, thumbnail, timestamp, views, ago, url, author } = videoInfo;
+
+    if (!title || !thumbnail || !timestamp || !views || !ago || !url || !author) {
+      return m.reply('Información incompleta del video.');
+    }
+
     const vistas = formatViews(views);
-    const infoMessage = `*𖹭.╭✿*:･ﾟﮩ٨KurumiBot-MDﮩ٨ـﮩﾟ･:*✿╮.𖹭*\n> ♡ *Título:* ${title}\n*°➷➷➷➷➷➷➷➷➷➷°*\n> ♡ *Duración:* ${timestamp}\n*➷➷➷➷➷°*\n> ♡ *Vistas:* ${vistas}\n*°➷➷➷➷➷➷➷➷➷➷*\n> ♡ *Canal:* ${videoInfo.author.name || 'Desconocido'}\n*°➷➷➷➷➷°*\n> ♡ *Publicado:* ${ago}\n*°➷➷➷➷➷*\n> ♡ *Enlace:* ${url}\n*➷➷➷➷➷➷➷➷➷➷➷`;
+    const canal = author.name ? author.name : 'Desconocido';
+        const infoMessage = `
+*.╭╭ִ╼࣪━ִDESCARGANDO━ִ╾࣪╮╮.*
+> ♡ *Título:* ${title || 'Desconocido'}
+*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
+> ♡ *Duración:* ${timestamp || 'Desconocido'}
+*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
+> ♡ *Vistas:* ${vistas || 'Desconocido'}
+*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
+> ♡ *Canal:* ${canal}
+*°.⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸⎯ܴ⎯̶᳞͇ࠝ⎯⃘̶⎯̸.°*
+> ♡ *Publicado:* ${ago || 'Desconocido'}
+*⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︣︢ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ۛ۫۫۫۫۫۫ۜ⏝ּׅ︢︣ׄۛ۫۫۫۫۫۫ۜ*`;
+
     const thumb = (await conn.getFile(thumbnail))?.data;
 
     const JT = {
       contextInfo: {
         externalAdReply: {
-          title: packname,
+          title: botname,
           body: dev,
           mediaType: 1,
           previewType: 0,
@@ -100,62 +64,61 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 
     await conn.reply(m.chat, infoMessage, m, JT);
 
-    if (command === 'play') {
-        const api = await ddownr.download(url, 'mp3');
-        const result = api.downloadUrl;
-        await conn.sendMessage(m.chat, { audio: { url: result }, mimetype: "audio/mpeg" }, { quoted: m });
+ if (command === 'play' || command === 'mp3'  || command === 'playaudio') {
+  try {
+    const api = await (await fetch(`https://api.vreden.my.id/api/ytmp3?url=${url}`)).json();
+    const resulta = api.result;
+    const result = resulta.download.url
 
-    } else if (command === 'play2' || command === 'ytmp4') {
-      let sources = [
-        `https://api.siputzx.my.id/api/d/ytmp4?url=${url}`,
-        `https://api.zenkey.my.id/api/download/ytmp4?apikey=zenkey&url=${url}`,
-        `https://axeel.my.id/api/download/video?url=${encodeURIComponent(url)}`,
-        `https://delirius-apiofc.vercel.app/download/ytmp4?url=${url}`
-      ];
+    if (!result) throw new Error('El enlace de audio no se generó correctamente.');
 
-      let success = false;
-      for (let source of sources) {
-        try {
-          const res = await fetch(source);
-          const { data, result, downloads } = await res.json();
-          let downloadUrl = data?.dl || result?.download?.url || downloads?.url || data?.download?.url;
+    await conn.sendMessage(m.chat, { audio: { url: result }, fileName: `${api.result.title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
+  } catch (e) {
+    console.error('Error al enviar el audio:', e.message);
+    return conn.reply(m.chat, 'No pude enviar tu audio. Esto puede ser debido a problemas de ortografía o el audio es demasiado largo.', m);
+  }
+} else if (command === 'play2' || command === 'mp4' || command === 'playvideo') {
+  try {
+    const response = await fetch(`https://api.vreden.my.id/api/ytmp4?url=${url}`);
+    const json = await response.json();
+    const resultad = json.result;
+    const resultado = resultad.download.url
 
-          if (downloadUrl) {
-            success = true;
-            await conn.sendMessage(m.chat, {
-              video: { url: downloadUrl },
-              fileName: `${title}.mp4`,
-              mimetype: 'video/mp4',
-              caption: `${dev}`,
-              thumbnail: thumb
-            }, { quoted: m });
-            break;
-          }
-        } catch (e) {
-          console.error(`Error con la fuente ${source}:`, e.message);
-        }
-      }
+    if (!resultad || !resultado) throw new Error('El enlace de video no se generó correctamente.');
 
-      if (!success) {
-        return m.reply(`⚠︎ *No se pudo descargar el video:* No se encontró un enlace de descarga válido.`);
-      }
-    } else {
-      throw "Comando no reconocido.";
-    }
+    await conn.sendMessage(m.chat, { video: { url: resultado }, fileName: resultad.title, mimetype: 'video/mp4', caption: dev }, { quoted: m });
+  } catch (e) {
+    console.error('Error al enviar el video:', e.message);
+    return conn.reply(m.chat, '⚠︎ No pude enviar tu video. Esto puede ser debido a problemas de ortografía o el video es demasiado largo.', m);
+  }
+} else {
+  return conn.reply(m.chat, '⚠︎ Comando no reconocido.', m);
+}
+
+    user.chocolates -= 2;
+    conn.reply(m.chat, `🩵 Utilizaste 2 *Diamantes*`, m);
+
   } catch (error) {
-    return m.reply(`⚠︎ *Error:* ${error.message}`);
+    return m.reply(`⚠︎ Ocurrió un error: ${error}`);
   }
 };
 
-handler.command = handler.help = ['play', 'ytmp4', 'play2'];
+handler.command = handler.help = ['play', 'mp3', 'playaudio', 'play2', 'mp4', 'playvideo'];
 handler.tags = ['downloader'];
 
 export default handler;
 
 function formatViews(views) {
-  if (views >= 1000) {
-    return (views / 1000).toFixed(1) + 'k (' + views.toLocaleString() + ')';
-  } else {
-    return views.toString();
+  if (views === undefined) {
+    return "No disponible";
   }
+
+  if (views >= 1_000_000_000) {
+    return `${(views / 1_000_000_000).toFixed(1)}B (${views.toLocaleString()})`;
+  } else if (views >= 1_000_000) {
+    return `${(views / 1_000_000).toFixed(1)}M (${views.toLocaleString()})`;
+  } else if (views >= 1_000) {
+    return `${(views / 1_000).toFixed(1)}k (${views.toLocaleString()})`;
+  }
+  return views.toString();
 }
