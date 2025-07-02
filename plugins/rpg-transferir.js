@@ -19,17 +19,17 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
   let msg = `
 ╭ׅׄ̇─ׅ̻ׄ╮۪̇߭︹ׅ̟ׄ̇︹ׅ۪ׄ̇߭︹ׅ̟ׄ̇⊹۪̇߭︹ׅ̟ׄ̇︹ׅ۪ׄ̇߭︹ׅ̟ׄ̇⊹۪̇߭︹ׅ̟ׄ̇︹ׅ۪ׄ̇߭︹ׅ̟ׄ̇⊹
-├ׁ̟̇    「TRANSFERENCIA」 
+├ׁ̟̇    「𝑻𝑹𝑨𝑵𝑺𝑭𝑬𝑹𝑬𝑵𝑪𝑰𝑨」 
 ╰━─━─━─≪≪✠≫≫──━━╯
 ┃
-┃REMITENTE: ${nombre}
+┃𝑹𝑬𝑴𝑰𝑻𝑬𝑵𝑻𝑬: ${nombre}
 ┃
-┃CANTIDAD: ${amount} MakiCoins
+┃𝑪𝑨𝑵𝑻𝑰𝑫𝑨𝑫: ${amount} KurumiCoins
 ┗━━━━━━━━━━━━━━━━━┛`.trim()
 
   // ENVÍA SÓLO EL MENSAJE DE TRANSFERENCIA, PERO CON CONTEXTO DE NEWSLETTER
   const channelRD = { 
-    id: "120363400360651198@newsletter", // <-- ID de tu canal/newsletter
+    id: "120363398249175961@newsletter", // <-- ID de tu canal/newsletter
     name: "TRANSFIRIENDO MAKICOINS"              // <-- Nombre de tu canal/newsletter
   }
 
@@ -46,8 +46,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       },
       externalAdReply: {
         title: channelRD.name,
-        body: 'MAKIMA 2.0 BOT',
-        thumbnailUrl: 'https://qu.ax/xxaLb.jpg', // Cambia la imagen si lo deseas
+        body: '🌸𝑲𝒖𝒓𝒖𝒎𝒊 - 𝑩𝒐𝒕 - 𝑴𝑫🌹',
+        thumbnailUrl: 'https://files.catbox.moe/oyj83o.jpg', // Cambia la imagen si lo deseas
         mediaType: 1,
         renderLargerThumbnail: true,
         sourceUrl: `https://whatsapp.com/channel/${channelRD.id.replace('@newsletter', '')}`
