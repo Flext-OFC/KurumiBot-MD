@@ -2,8 +2,8 @@
 // Codigo creado por Félix Manuel (github.com/mantis-has) para sistema Makima MD
 
 const channelRD = {
-  id: "120363400360651198@newsletter", // Cambia por tu canal si quieres
-  name: "MAKIMA - CHANNEL"
+  id: "120363398249175961@newsletter", // Cambia por tu canal si quieres
+  name: "𝗞𝗨𝗥𝗨𝗠𝗜 - 𝗕𝗢𝗧 - 𝗖𝗛𝗔𝗡𝗡𝗘𝗟"
 }
 const thumbnailUrl = 'https://qu.ax/dXOUo.jpg' // Imagen cuadrada y pequeña
 
