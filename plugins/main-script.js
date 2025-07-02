@@ -3,11 +3,11 @@ const handler = async (m, { conn }) => {
  _*REPO DE LA BOT*_ 
 
 \`\`\`Repositorio OFC:\`\`\`
-https://github.com/mantis-has/Makima
+https://github.com/flextOFC/KurumiBot-MD
 
 > 🌟 Deja tu estrella así nos motivas a seguir mejorando la bot.
 
-🩵 *Grupo oficial de la bot:* https://chat.whatsapp.com/KoJjHo6o3Ew7P5qkjaIh0r
+🩵 *Grupo oficial de la bot:* https://chat.whatsapp.com/E867Fqb9zYJHlMJ2Rulckc?mode=r_c
   `.trim()
 
   await conn.reply(m.chat, texto, m)
