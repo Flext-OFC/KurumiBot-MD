@@ -10,10 +10,10 @@ try {
 let q = m.quoted ? m.quoted : m
 let mime = (q.msg || q).mimetype || q.mediaType || ''
 if (/webp|image|video/g.test(mime)) {
-if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return m.reply(`🩵 *¡El video no puede durar mas de 8 segundos!*`)
+if (/video/g.test(mime)) if ((q.msg || q).seconds > 8) return m.reply(`📌 *¡El video no puede durar mas de 8 segundos!*`)
 let img = await q.download?.()
 
-if (!img) return conn.reply(m.chat, `🩵  *_Responde a un vídeo, imagen o Gif para generar tu sticker._*`, m, rcanal)
+if (!img) return conn.reply(m.chat, `🌸  *_ʀᴇsᴘᴏɴᴅᴇ ᴀ ᴜɴ ᴠɪᴅᴇᴏ, ɪᴍᴀɢᴇɴ ᴏ ɢɪғ ᴘᴀʀᴀ ɢᴇɴᴇʀᴀʀ ᴛᴜ sᴛɪᴄᴋᴇʀ._*`, m, rcanal)
 
 let out
 try {
