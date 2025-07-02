@@ -2,7 +2,7 @@ import yts from 'yt-search';
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
-    throw `💎 Ingresa un nombre o texto para buscar en YouTube.\n\n📌 *Ejemplo:* ${usedPrefix + command} Haikyuu AMV`;
+    throw `💖 Ingresa un nombre o texto para buscar en YouTube.\n\n📌 *Ejemplo:* ${usedPrefix + command} Haikyuu AMV`;
   }
 
   try {
@@ -15,23 +15,23 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       throw '❌ No se encontraron resultados. Intenta con otro título.';
     }
 
-    const body = `*┏━━━━━━━━━━━━━━━━━⬣*
-*┃ 💎 MAKIMA - PLAY 💎*
-*┗━━━━━━━━━━━━━━━━━⬣*
+    const body = `*┏♡･ﾟ:*｡.:*･ﾟﾟ･*:.｡*:ﾟ･♡⬣*
+*┃ 💖 ★彡[ᴋᴜʀᴜᴍɪʙᴏᴛ - ᴍᴅ]彡★ 💖*
+*┗♡･ﾟ:*｡.:*･ﾟﾟ･*:.｡*:ﾟ･♡⬣*
 
-🩵 *TÍTULO:* 
+🌸 *🅃🄸🅃🅄🄻🄾:* 
 » ${videoInfo.title}
 
-🩵 *CANAL:* 
+✨ *🄲🄰🄽🄰🄻:* 
 » ${videoInfo.author.name}
 
-🩵 *DURACIÓN:* 
+⏳ *🄳🅄🅁🄰🄲🄸🄾🄽:* 
 » ${videoInfo.timestamp}
 
-🩵 *PUBLICADO:* 
+💖 *🄿🅄🄱🄻🄸🄲🄰🄳🄾:* 
 » ${videoInfo.ago}
 
-🩵 *VISTAS:* 
+📌 *🅅🄸🅂🅃🄰🅂:* 
 » ${videoInfo.views.toLocaleString()} 
 
 > 💎 *Selecciona una opción para descargar:*`;
@@ -41,10 +41,10 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
       {
         image: { url: videoInfo.thumbnail },
         caption: body,
-        footer: '🩷 ᴍᴀᴋɪᴍᴀ ʙᴏᴛ ✨| ᴘʟᴀʏ',
+        footer: '🌸 𝑲𝑼𝑹𝑼𝑴𝑰 ✨| 𝑷𝑳𝑨𝒀',
         buttons: [
-          { buttonId: `.ytmp3 ${videoInfo.url}`, buttonText: { displayText: 'ᴀᴜᴅɪᴏ' } },
-          { buttonId: `.play2 ${videoInfo.url}`, buttonText: { displayText: 'ᴠɪᴅᴇᴏ' } },
+          { buttonId: `.ytmp3 ${videoInfo.url}`, buttonText: { displayText: '𝚊𝚞𝚍𝚒𝚘' } },
+          { buttonId: `.play2 ${videoInfo.url}`, buttonText: { displayText: '𝚟𝚒́𝚍𝚎𝚘' } },
         ],
         viewOnce: true,
         headerType: 4,
