@@ -50,9 +50,9 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
     // Comandos para el menú y "CARGANDO COMANDOS" (pueden ser usados por cualquier usuario)
     if (command === 'menu' || command === 'help' || command === 'menú') {
       // Variables para el contexto del canal
-      const dev = 'Félix Manuel';
+      const dev = 'Flext Enzo';
       const redes = 'https://github.com/Andresv27728/2.0';
-      const channelRD = { id: "120363398249175961@newsletter", name: "MAKIMA - FRASES" };
+      const channelRD = { id: "120363398249175961@newsletter", name: "💖𝐊𝐮𝐫𝐮𝐦𝐢 𝐁𝐨𝐭 𝐌𝐃 𝐂𝐡𝐚𝐧𝐧𝐞𝐥🌸" };
       let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
       let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.catbox.moe/t1mq2n.jpg');
 
