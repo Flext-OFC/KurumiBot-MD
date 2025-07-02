@@ -33,14 +33,14 @@ var handler = async (m, { conn }) => {
   let { premium, level, exp, registered, role } = user
   let username = await conn.getName(who)
 
-  // 🩵 Animación de carga jjj
+  // 🩵 𝐴𝑛𝑖𝑚𝑎𝑐𝑖𝑜𝑛 𝑑𝑒 𝑐𝑎𝑟𝑔𝑎 𝑗𝑗𝑗
   let animacion = `
-〘 CARGANDO PERFIL 〙
+〘 𝗖𝗔𝗥𝗚𝗔𝗡𝗗𝗢 𝗣𝗘𝗥𝗙𝗜𝗟 〙
 
 • La carga demora un poco.
 • Porfavor espera...
 
-💎 Perfil reconocido con exito.
+🌹 Perfil reconocido con exito.
 
 *Enviando tu perfil...*
 `.trim()
@@ -51,9 +51,9 @@ var handler = async (m, { conn }) => {
   let noprem = `
 『 PERFIL DEL USUARIO 』
 
-🩵 *usuario:* ${username}
-🩵 *tag:* @${who.replace(/@.+/, '')}
-🩵 *Registrado:* ${registered ? '✅ Activado' : '❌ No'}
+💖 *usuario:* ${username}
+📌 *tag:* @${who.replace(/@.+/, '')}
+🌸 *Registrado:* ${registered ? '✅ Activado' : '❌ No'}
 
 ╭━━━━━━━━━━━━━╮
 ┃💎 *Nivel:* ${level}
@@ -65,13 +65,13 @@ var handler = async (m, { conn }) => {
 
   // 🔥 Usuarios Premium
   let prem = `
-🩵〘 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 〙🩵
+🌹〘 𝚄𝚂𝚄𝙰𝚁𝙸𝙾 𝙿𝚁𝙴𝙼𝙸𝚄𝙼 〙💖
 
-ERES RECONOCIDO EN MAKIMA』
+𝑬𝑹𝑬𝑺 𝑹𝑬𝑪𝑶𝑵𝑶𝑪𝑰𝑫𝑶 𝑬𝑵 𝑲𝑼𝑹𝑼𝑴𝑰』
 
-🩵 *Usuario:* ${username}
-🩵 *tag:* @${who.replace(/@.+/, '')}
-🩵 *Registrado:* ${registered ? '✅' : '❌'}
+🌹 *Usuario:* ${username}
+💥 *tag:* @${who.replace(/@.+/, '')}
+💫 *Registrado:* ${registered ? '✅' : '❌'}
 
 ╭━━━━━━━━━━━━━╮
 ┃💎 *Nivel:* ${level}
