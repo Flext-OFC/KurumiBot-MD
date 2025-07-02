@@ -36,8 +36,8 @@ const handler = async (m, {conn, command, args}) => {
         },
         externalAdReply: {
           title: channelRD.name,
-          body: 'MAKIMA 2.0 BOT',
-          thumbnailUrl: 'https://qu.ax/tqWBN.jpg', // Cambia si quieres
+          body: '🌸𝙺𝚄𝚁𝚄𝙼𝙸 - 𝙱𝙾𝚃 - 𝙼𝙳🌸',
+          thumbnailUrl: 'https://files.catbox.moe/1v1l4m.jpg', // Cambia si quieres
           mediaType: 1,
           renderLargerThumbnail: true,
           sourceUrl: `https://whatsapp.com/channel/${channelRD.id.replace('@newsletter', '')}`
