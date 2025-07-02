@@ -5,10 +5,10 @@ import db from '../lib/database.js'
 const img = 'https://qu.ax/dXOUo.jpg'
 
 // Canal info (personaliza aquí)
-const canalName = 'ECONOMIA DEL USUARIO'
-const canalDesc = 'MAKIMA 2.0 CHANNEL'
-const canalUrl = 'https://whatsapp.com/channel/120363400360651198'
-const dev = 'Félix Manuel'
+const canalName = '𝗘𝗖𝗢𝗡𝗢𝗠𝗜𝗔 𝗗𝗘𝗟 𝗨𝗦𝗨𝗔𝗥𝗜𝗢'
+const canalDesc = '𝑲𝑼𝑹𝑼𝑴𝑰 - 𝑩𝑶𝑻 - 𝑴𝑫 𝑪𝑯𝑨𝑵𝑵𝑬𝑳'
+const canalUrl = 'https://whatsapp.com/channel/120363398249175961'
+const dev = 'Flext Enzo'
 
 function obtenerRango(level) {
   if (level >= 100) return 'SUPREMO'
@@ -28,7 +28,7 @@ let handler = async (m, { conn }) => {
   if (who === conn.user.jid) return m.react('✖️')
 
   if (!global.db.data.users[who]) {
-    return m.reply(`🩵 *Este usuario no está registrado.*`)
+    return m.reply(`🌹 *Este usuario no está registrado.*`)
   }
 
   let user = global.db.data.users[who]
@@ -41,11 +41,11 @@ let handler = async (m, { conn }) => {
 ╭━━━━━━━━━━━━━━━━━╮
 ┃𝗘𝗖𝗢𝗡𝗢𝗠𝗜𝗔 𝗗𝗘𝗟 𝗨𝗦𝗨𝗔𝗥𝗜𝗢: 
 ╰━─━─━─≪≪✠≫≫─━─━─━╯
-🩵𝖭𝗈𝗆𝖻𝗋𝖾: ${nombreParaMostrar}
-🩵𝖤𝗑𝗉: ${user.exp}
-🩵𝖭𝗂𝗏𝖾𝗅: ${user.level}
-🩵𝖱𝖺𝗇𝗀𝗈: ${rangoMagico}
-🩵𝖥𝖾𝖼𝗁𝖺: ${new Date().toLocaleString('es-ES')}
+📌𝖭𝗈𝗆𝖻𝗋𝖾: ${nombreParaMostrar}
+💫𝖤𝗑𝗉: ${user.exp}
+✨𝖭𝗂𝗏𝖾𝗅: ${user.level}
+💥𝖱𝖺𝗇𝗀𝗈: ${rangoMagico}
+🌸𝖥𝖾𝖼𝗁𝖺: ${new Date().toLocaleString('es-ES')}
 ╰━━━━━━━━━━━━━━━━━━
 > © Desarrollado por Félix 
 ╰━━━━━━━━━━━━━━━━━━`.trim()
@@ -58,7 +58,7 @@ let handler = async (m, { conn }) => {
     contextInfo: {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363400360651198@newsletter", // ID de tu canal
+        newsletterJid: "120363398249175961@newsletter", // ID de tu canal
         newsletterName: canalName,
         serverMessageId: -1,
       },
