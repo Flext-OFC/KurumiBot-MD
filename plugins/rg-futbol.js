@@ -15,10 +15,10 @@ const jugadores = [
   { nombre: "Ronaldo", valor: 100, url: "https://qu.ax/jDVGs.jpg" }
 ];
 
-const channelRD = { id: "120363400360651198@newsletter", name: "MAKIMA - FRASES" };
+const channelRD = { id: "120363398249175961@newsletter", name: "MAKIMA - FRASES" };
 const MAKIMA_ICON = "https://qu.ax/dXOUo.jpg";
-const GITHUB_MAKIMA = "https://github.com/mantis-has/Makima";
-const NEWSLETTER_TITLE = '🩵 MAKIMA BOT MD 🩵';
+const GITHUB_MAKIMA = "https://github.com/flextOFC/KurumiBot-MD";
+const NEWSLETTER_TITLE = '🌹 𝑲𝑼𝑹𝑼𝑴𝑰 - 𝑩𝑶𝑻 - 𝑴𝑫 💫';
 const SOC_CLAIM_TIMEOUT = 3 * 60 * 1000; // 3 minutos
 
 let soccerStorage = global.db.data.soccer || (global.db.data.soccer = {});
