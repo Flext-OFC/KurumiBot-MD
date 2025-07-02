@@ -78,7 +78,7 @@ var handler = async (m, { conn }) => {
 ┃💎 *Experiencia:* ${exp}
 ┃💎 *Rango:* ${role}
 ╰━━━━━━━━━━━━━
-> © powered by Félix Manuel 
+> © powered by Flext Enzo
 `.trim()
 
   await conn.sendFile(m.chat, pp, 'ponte_una_foto_gay', premium ? prem : noprem, m, undefined, { mentions: [who] })
