@@ -42,9 +42,9 @@ let handler = async function (m, { conn, text, args, usedPrefix, command }) {
     }
     
     let sn = createHash('md5').update(m.sender).digest('hex')
-    let regbot = `┏━━━━━━━━━━━━━━━━🩵
-┃ *🩵 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗢 - Mákima Bot 🩵*
-┗━━━━━━━━━━━━━━━━🩵\n`
+    let regbot = `┏• • • • • • • • • • • • • • • • 🌹
+┃ *🌹 𝑹𝑬𝑮𝑰𝑺𝑻𝑹𝑶 - 𝑲𝑼𝑹𝑼𝑴𝑰 𝑩𝑶𝑻 🌹*
+┗• • • • • • • • • • • • • • • • 📌\n`
 
 regbot += `╭───────────────╮\n`
 regbot += `│ *👤 Nombre:* ${name}\n`
@@ -53,28 +53,28 @@ regbot += `╰───────────────╯\n`
 
 regbot += `💠───────────────💠\n`
 regbot += `*🎁 𝗥𝗘𝗖𝗢𝗠𝗣𝗘𝗡𝗦𝗔𝗦:*\n`
-regbot += `= 🩵 15 Estrellas ✨\n`
-regbot += `= 🩵 5 MakimaCoins 💠\n`
-regbot += `= 🩵 245 Experiencia 📈\n`
-regbot += `=🩵 12 Tokens 💰\n`
+regbot += `= 🌸 15 Estrellas ✨\n`
+regbot += `= ✨ 5 KurumiCoins 💠\n`
+regbot += `= 💥 245 Experiencia 📈\n`
+regbot += `=💖 12 Tokens 💰\n`
 
 regbot += `💠───────────────💠\n`
 regbot += `📘 Usa *#perfil* para ver tu información detallada.\n`
-regbot += `┗━━━━━━━━━━━━━━━━━━🩵`
+regbot += `┗• • • • • • • • • • • • • • • • 🩵`
 
   await conn.sendMessage(m.chat, {
         text: regbot,
         contextInfo: {
             externalAdReply: {
-                title: '⊱『🩵𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥🔥』⊰',
-                thumbnailUrl: 'https://files.catbox.moe/445fzg.jpg',
+                title: '⊱『🌹𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥🔥』⊰',
+                thumbnailUrl: 'https://files.catbox.moe/scumca.jpg',
                 mediaType: 1,
                 renderLargerThumbnail: true
             }
         }
     }, { quoted: m });
 
-/*    await m.react('🩵')
+/*    await m.react('🌸')
   await conn.sendMessage(m.chat, {
            text: regbot, 
         contextInfo: {
@@ -96,13 +96,13 @@ let chtxt = `👤 *𝖴𝗌uario* » ${m.pushName || 'Anónimo'}
 🩵 *𝖨𝖣 𝖽𝖾 𝗋𝖾𝗀𝗂𝗌𝗍𝗋𝗈* »
 ⤷ ${sn}`;
 
-    let channelID = '120363402615935849@newsletter';
+    let channelID = '120363398249175961@newsletter';
         await conn.sendMessage(channelID, {
         text: chtxt,
         contextInfo: {
             externalAdReply: {
-                title: "【 🩵 𝐍𝐔𝐄𝐕𝐎 𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎 🩵 】",
-                body: '𝚁𝚎𝚐𝚒𝚜𝚝𝚛𝚘𝚜 𝙼𝚊𝚔𝚒𝚖𝚊 2.0 𝙱𝚘𝚝',
+                title: "【 🌸 ɴᴜᴇᴠᴏ ʀᴇɢɪsᴛʀᴏ 💫 】",
+                body: '𝗥𝗲𝗴𝗶𝘀𝘁𝗿𝗼𝘀 𝗞𝘂𝗿𝘂𝗺𝗶 𝗕𝗼𝘁 𝗠𝗗',
                 thumbnailUrl: perfil,
                 sourceUrl: redes,
                 mediaType: 1,
