@@ -9,9 +9,9 @@ let handler = async function (m, { conn }) {
 
   user.registered = false
   m.reply(`
-「📌」 *Registro eliminado.*
+「📌」 *𝑹𝒆𝒈𝒊𝒔𝒕𝒓𝒐 𝒆𝒍𝒊𝒎𝒊𝒏𝒂𝒅𝒐.*
 
-《✧》Ya no podrás usar mis comandos.
+《✧》𝐘𝐚 𝐧𝐨 𝐩𝐨𝐝𝐫𝐚𝐬 𝐮𝐬𝐚𝐫 𝐦𝐢𝐬 𝐜𝐨𝐦𝐚𝐧𝐝𝐨𝐬.
 `)
 
   // Datos del canal/newsletter (para el efecto de reenviado)
@@ -33,7 +33,7 @@ let handler = async function (m, { conn }) {
       forwardingScore: 999,
       externalAdReply: {
         title: channelRD.name,
-        body: 'MAKIMA - FRASES',
+        body: '💫𝐊𝐔𝐑𝐔𝐌𝐈𝐁𝐎𝐓 - 𝐅𝐑𝐀𝐒𝐄𝐒🌹',
         thumbnailUrl: 'https://files.catbox.moe/o2s23u.jpg', // Opcional, cámbiala si quieres
         mediaType: 1,
         renderLargerThumbnail: true,
