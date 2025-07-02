@@ -28,18 +28,18 @@ console.log(`Error : ${e}`)
 }}
   
 //creador y otros
-global.creador = 'Wa.me/18293142989'
+global.creador = 'Wa.me/5491168758497'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.asistencia = 'Wa.me/18293142989'
-global.namechannel = '⏤͟͞ू⃪  ̸̷͢𝐌𝐚𝐤𝐢𝐦𝐚 ☦︎ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥𑁯ᰍ'
-global.namegrupo = '⏤͟͞ू⃪  ̸̷͢𝐌𝐚𝐤𝐢𝐦𝐚 ☦︎ 𝐆𝐫𝐮𝐩𝐨𑁯ᰍ'
-global.namecomu = 'Deymoon Club'
-global.listo = '🩵 *Aquí tienes ᕕ( ᐛ )ᕗ*'
+global.asistencia = 'Wa.me/5491168758497'
+global.namechannel = '𝐊𝐮𝐫𝐮𝐦𝐢 - 𝐛𝐨𝐭.-.𝐌𝐃 - 𝐂𝐡𝐚𝐧𝐧𝐞𝐥𑁯ᰍ'
+global.namegrupo = '🌹𝐊𝐔𝐑𝐔𝐌𝐈 - 𝐁𝐎𝐓 - 𝐌𝐃🌸'
+global.namecomu = 'Team Moonlight'
+global.listo = '🌹 *Aquí tienes ᕕ( ᐛ )ᕗ*'
 
 //Ids channel
-global.idchannel = '120363400360651198@newsletter'
-global.canalIdM = ["120363400360651198@newsletter", "120363418804796632@newsletter"]
-global.canalNombreM = ["⏤͟͞ू⃪  ̸̷͢𝐌𝐚𝐤𝐢𝐦𝐚 ☦︎ 𝐂𝐡𝐚𝐧𝐧𝐞𝐥𑁯ᰍ", "🩵̶۫̄͟Ⓜ︎𓏲𝐌500𓍲̈͜𝗨̴ᥣ̥𝗍̈rᥲ̄𓊓̵̬𝐂h҉a҉n҉n̸e҉l҉⋆͙̈么͟͞──"]
+global.idchannel = '120363398249175961@newsletter'
+global.canalIdM = ["120363398249175961@newsletter", "120363398249175961@newsletter"]
+global.canalNombreM = ["💖𝗞𝘂𝗿𝘂𝗺𝗶 𝗕𝗼𝘁 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗡𝗲𝘄💫"]
 global.channelRD = await getRandomChannel()
 
 global.d = new Date(new Date + 3600000)
@@ -56,20 +56,20 @@ global.done = '✅'
 global.error = '❌'
 
 //Emojis determinado de MakimaBot 
-global.emoji = '🩵'
-global.emoji2 = '💎'
-global.emoji3 = '🩵'
-global.emoji4 = '💎'
+global.emoji = '🌹'
+global.emoji2 = '🌸'
+global.emoji3 = '💫'
+global.emoji4 = '💖'
 global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
 
 
 //Enlaces
-var canal = 'https://whatsapp.com/channel/0029VbAZcyIIXnlwp79iwu2l'  
-let canal2 = 'https://whatsapp.com/channel/0029VbAa5sNCsU9Hlzsn651S'
-var git = 'https://github.com/mantis-has' 
+var canal = 'https://whatsapp.com/channel/0029Vb4oRvuJuyALQAPcyu2O'
+let canal2 = 'https://whatsapp.com/channel/0029Vb4oRvuJuyALQAPcyu2O'
+var git = 'https://github.com/flextOFC' 
 var youtube = '' 
-var github = 'https://github.com/mantis-has/Makima' 
-let correo = 'quieresrobarladrondebotsxd@gmail.com'
+var github = 'https://github.com/flextOFC/KurumiBot-MD'
+let correo = 'flextofc@gmail.com'
 global.redes = [canal, git, github, correo].getRandom()
 
 let category = "imagen"
