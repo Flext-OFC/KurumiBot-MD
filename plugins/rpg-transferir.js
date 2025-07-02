@@ -30,7 +30,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   // ENVÍA SÓLO EL MENSAJE DE TRANSFERENCIA, PERO CON CONTEXTO DE NEWSLETTER
   const channelRD = { 
     id: "120363398249175961@newsletter", // <-- ID de tu canal/newsletter
-    name: "TRANSFIRIENDO MAKICOINS"              // <-- Nombre de tu canal/newsletter
+    name: "ᴛʀᴀɴsғɪʀɪᴇɴᴅᴏ ᴋᴜʀᴜᴍɪᴄᴏɪɴs"              // <-- Nombre de tu canal/newsletter
   }
 
   await conn.sendMessage(m.chat, {
