@@ -9,7 +9,7 @@ let handler = async (m, { text, conn }) => {
 
 
   if (!text) {
-    return await conn.reply(m.chat, `🩵 Escribe el prompt de la imagen. Ejemplo:\n#dalle2 makima con denji.`, m)
+    return await conn.reply(m.chat, `🩵 Escribe el prompt de la imagen. Ejemplo:\n#dalle2 kurumi con denji.`, m)
   }
 
   await conn.reply(m.chat, `🩵 Generando la imagen de: "${text}", espera un momento...`, m)
