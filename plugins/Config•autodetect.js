@@ -14,9 +14,9 @@ foto = `《✦》Se ha cambiado la imagen del grupo.\n\n> ✧ Acción hecha por:
 edit = `《✦》${usuario} Ha permitido que ${m.messageStubParameters[0] == 'on' ? 'solo admins' : 'todos'} puedan configurar el grupo.`
 newlink = `《✦》El enlace del grupo ha sido restablecido.\n\n> ✧ Acción hecha por:\n> » ${usuario}`
 status = `《✦》El grupo ha sido ${m.messageStubParameters[0] == 'on' ? '*cerrado*' : '*abierto*'} Por ${usuario}\n\n> ✧ Ahora ${m.messageStubParameters[0] == 'on' ? '*solo admins*' : '*todos*'} pueden enviar mensaje.`
-admingp = `「💎」 NUEVO ADMIN EN EL GRUPO.\n\nNombre: @${m.messageStubParameters[0].split`@`[0]}\n\nLe puso admin: ${usuario}\n\n> MAKIMA BOT MD`
-noadmingp =  `「💎」UN ADMIN MENOS EN EL GRUPO.\n\nNombre: @${m.messageStubParameters[0].split`@`[0]}\n\nLe quito admin: ${usuario}\n\n> MAKIMA BOT MD`
-aceptar = `✦ Ha llegado un nuevo participante al grupo.\n\n> ◦ ✐ Grupo: *${groupMetadata.subject}*\n\n> ◦ ⚘ Bienvenido/a: @${m.messageStubParameters[0].split('@')[0]}\n\n> ◦ ✧ Aceptado por: @${m.sender.split('@')[0]}` 
+admingp = `「🌸」 𝗡𝗨𝗘𝗩𝗢 𝗔𝗗𝗠𝗜𝗡 𝗘𝗡 𝗘𝗟 𝗚𝗥𝗨𝗣𝗢.\n\nNombre: @${m.messageStubParameters[0].split`@`[0]}\n\nLe puso admin: ${usuario}\n\n> KURUMI - BOT-  MD`
+noadmingp =  `「🌸」UN ADMIN MENOS EN EL GRUPO.\n\nNombre: @${m.messageStubParameters[0].split`@`[0]}\n\nLe quito admin: ${usuario}\n\n> KURUMI - BOT - MD`
+aceptar = `✦ 𝙷𝚊 𝚕𝚕𝚎𝚐𝚊𝚍𝚘 𝚞𝚗 𝚗𝚞𝚎𝚟𝚘 𝚙𝚊𝚛𝚝𝚒𝚌𝚒𝚙𝚊𝚗𝚝𝚎 𝚊𝚕 𝚐𝚛𝚞𝚙𝚘.\n\n> ◦ ✐ 𝙶𝚛𝚞𝚙𝚘: *${groupMetadata.subject}*\n\n> ◦ ⚘ 𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝗶𝗱𝗼/𝗮: @${m.messageStubParameters[0].split('@')[0]}\n\n> ◦ ✧ 𝗔𝗰𝗲𝗽𝘁𝗮𝗱𝗼 𝗽𝗼𝗿: @${m.sender.split('@')[0]}` 
 
 if (chat.detect && m.messageStubType == 21) {
 await conn.sendMessage(m.chat, { text: nombre, mentions: [m.sender] }, { quoted: fkontak })   
