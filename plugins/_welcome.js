@@ -34,7 +34,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     },
     externalAdReply: {
       title: channelRD.name,
-      body: '🌹𝑲𝒖𝒓𝒖𝒎𝒊 𝑩𝒐𝒕 𝑴𝑫💖,
+      body: '🌹𝑲𝒖𝒓𝒖𝒎𝒊 𝑩𝒐𝒕 𝑴𝑫💖',
       thumbnailUrl: thumbnailUrl,
       mediaType: 1,
       renderLargerThumbnail: false,
