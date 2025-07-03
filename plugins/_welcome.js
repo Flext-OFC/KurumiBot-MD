@@ -2,8 +2,8 @@ import { WAMessageStubType } from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 
 const channelRD = {
-  id: "120363400360651198@newsletter", // Cambia por tu canal si quieres
-  name: "MAKIMA - CHANNEL"
+  id: "120363398249175961@newsletter", // Cambia por tu canal si quieres
+  name: "🌸𝐊𝐔𝐑𝐔𝐌𝐈 - 𝐂𝐇𝐀𝐍𝐍𝐄𝐋"
 };
 
 export async function before(m, { conn, participants, groupMetadata }) {
@@ -34,7 +34,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     },
     externalAdReply: {
       title: channelRD.name,
-      body: 'MAKIMA 2.0 BOT',
+      body: '🌹𝑲𝒖𝒓𝒖𝒎𝒊 𝑩𝒐𝒕 𝑴𝑫💖,
       thumbnailUrl: thumbnailUrl,
       mediaType: 1,
       renderLargerThumbnail: false,
