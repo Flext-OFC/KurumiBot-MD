@@ -50,13 +50,13 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   if (m.messageStubType == 27) {
     const bienvenida = `
-💎 WELCOME - USER 💎
+🌸 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗢/@ 🌸
 
-🩵 Usuario: ${user}
-🩵 Grupo: ${groupMetadata.subject}
-🩵 Miembros: ${total}
+📌 𝗨𝘀𝘂𝗮𝗿𝗶𝗼: ${user}
+💥 𝗚𝗿𝘂𝗽𝗼: ${groupMetadata.subject}
+✨ 𝗠𝗶𝗲𝗺𝗯𝗿𝗼𝘀: ${total}
 
-⌬ Usa *#help* para ver los comandos disponibles
+⌬ Usa *#menu* para ver los comandos disponibles
 `
     // Mensaje de bienvenida como newsletter
     await conn.sendMessage(m.chat, { 
@@ -66,18 +66,18 @@ export async function before(m, { conn, participants, groupMetadata }) {
     });
     // Mensaje adicional, respondiendo a 《✧》 LLEGO OTRO
     await conn.sendMessage(m.chat, { 
-      text: 'SE NOS UNIÓ UN USUARIO', 
+      text: '💫ɴᴜᴇᴠᴏ ᴍɪᴇᴍʙʀᴏ ᴅᴇʟ ɢʀᴜᴘᴏ💫', 
       contextInfo: contextNewsletter
-    }, { quoted: quotedMsg('《✧》 LLEGO OTRO GAY JAJAJA') });
+    }, { quoted: quotedMsg('《✧》 𝑼𝒏 𝒏𝒖𝒆𝒗𝒐 𝒎𝒊𝒆𝒎𝒃𝒓𝒐 𝒍𝒍𝒆𝒈𝒐..') });
   }
 
   if ([28, 32].includes(m.messageStubType)) {
     const despedida = `
-💎 ADIOS - USER 💎
+🌸 𝗕𝗬𝗘 - 𝗨𝗦𝗘𝗥 :v 🌸
 
-🩵 Usuario: ${user}
-🩵 Grupo: ${groupMetadata.subject}
-🩵 Miembros: ${total}
+📌 𝗨𝘀𝘂𝗮𝗿𝗶𝗼: ${user}
+💥 𝗚𝗿𝘂𝗽𝗼: ${groupMetadata.subject}
+✨ 𝗠𝗶𝗲𝗺𝗯𝗿𝗼𝘀: ${total}
 
 ⌬ Espero y vuelvas después.
 `
@@ -89,8 +89,8 @@ export async function before(m, { conn, participants, groupMetadata }) {
     });
     // Segundo mensaje, respondiendo a 《✧》 SE FUE
     await conn.sendMessage(m.chat, { 
-      text: 'SE NOS FUE EL USUARIO', 
+      text: '𝑼𝑵 𝑼𝑺𝑼𝑨𝑹𝑰𝑶 𝑨𝑩𝑨𝑵𝑫𝑶𝑵𝑶 𝑬𝑳 𝑮𝑹𝑼𝑷𝑶', 
       contextInfo: contextNewsletter
-    }, { quoted: quotedMsg('《✧》 SE FUE GAY XD') });
+    }, { quoted: quotedMsg('《✧》 𝑺𝒆 𝒏𝒐𝒔 𝒇𝒖𝒆 𝒖𝒏 𝒓𝒆𝒚') });
   }
 }
